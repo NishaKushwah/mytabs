@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>My Personal Knowledge & Tool Hub</title>
+
+<style>
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #222;
+  --link: #0066cc;
+}
+body.dark {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #f1f1f1;
+  --link: #4da3ff;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 20px;
+}
+h1 { text-align: center; }
+.controls {
+  max-width: 900px;
+  margin: 20px auto;
+  display: flex;
+  gap: 10px;
+}
+input, select, button {
+  padding: 10px;
+  font-size: 14px;
+}
+button {
+  cursor: pointer;
+}
+.section {
+  background: var(--card);
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+.section h2 { margin-top: 0; }
+a {
+  display: block;
+  color: var(--link);
+  text-decoration: none;
+  padding: 6px 0;
+}
+a:hover { text-decoration: underline; }
+.hidden { display: none; }
+footer {
+  text-align: center;
+  opacity: 0.6;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔖 My Personal Knowledge & Tool Hub</h1>
+<p style="text-align:center;">Learn • Work • Build • Explore • Think</p>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Search links..." />
+  <select id="filter">
+    <option value="all">All Categories</option>
+    <option value="favorites">Favorites</option>
+    <option value="learning">Learning</option>
+    <option value="tools">Tools</option>
+    <option value="coding">Coding</option>
+    <option value="ai">AI</option>
+    <option value="design">Design</option>
+    <option value="reading">Reading & Research</option>
+    <option value="practice">Experiments & Practice</option>
+    <option value="analytics">Analytics & Marketing</option>
+    <option value="function">Tools by Function</option>
+    <option value="finance">Finance & Money</option>
+    <option value="planning">To-Do & Planning</option>
+    <option value="ideas">Inspiration & Ideas</option>
+    <option value="thinking">Mental Models & Thinking</option>
+    <option value="archive">Archives</option>
+  </select>
+  <button onclick="toggleDark()">🌙 Dark</button>
+</div>
+
+<!-- ⭐ Favorites -->
+<div class="section" data-category="favorites">
+<h2>⭐ Favorites</h2>
+<a href="https://chat.openai.com">ChatGPT</a>
+<a href="https://github.com">GitHub</a>
+<a href="https://notion.so">Notion</a>
+<a href="https://gmail.com">Gmail</a>
+</div>
+
+<!-- 📚 Learning -->
+<div class="section" data-category="learning">
+<h2>📚 Learning</h2>
+<a href="https://roadmap.sh/">roadmap</a>
+<a href="https://learn-anything.xyz/">learn-anything</a>
+</div>
+
+<!-- 🛠️ Tools -->
+<div class="section" data-category="tools">
+<h2>🛠️ Tools</h2>
+<a href="https://canva.com">Canva</a>
+<a href="https://docs.google.com">Google Docs</a>
+<a href="https://trello.com">Trello</a>
+</div>
+
+<!-- 💻 Coding -->
+<div class="section" data-category="coding">
+<h2>💻 Coding</h2>
+<a href="https://stackoverflow.com">Stack Overflow</a>
+<a href="https://codepen.io">CodePen</a>
+<a href="https://replit.com">Replit</a>
+</div>
+
+<!-- 🤖 AI -->
+<div class="section" data-category="ai">
+<h2>🤖 AI</h2>
+<a href="https://openai.com">OpenAI</a>
+<a href="https://huggingface.co">Hugging Face</a>
+<a href="https://futurepedia.io">Futurepedia</a>
+</div>
+<!-- 🤖 AI -->
+  
+<div class="section" data-category="auto">
+<h2>🤖 Automate</h2>
+<a href="https://string.com/">string</a>
+</div>
+<!-- 🤖 Automate -->
+  
+<!-- 🎨 Design -->
+<div class="section" data-category="design">
+<h2>🎨 Design</h2>
+<a href="https://figma.com">Figma</a>
+<a href="https://dribbble.com">Dribbble</a>
+<a href="https://coolors.co">Coolors</a>
+</div>
+
+<!-- 📖 Reading -->
+<div class="section" data-category="reading">
+<h2>📖 Reading & Research</h2>
+<a href="https://medium.com">Medium</a>
+<a href="https://dev.to">Dev.to</a>
+<a href="https://arxiv.org">arXiv</a>
+</div>
+
+<!-- 🧪 Practice -->
+<div class="section" data-category="practice">
+<h2>🧪 Experiments & Practice</h2>
+<a href="https://leetcode.com">LeetCode</a>
+<a href="https://hackerrank.com">HackerRank</a>
+<a href="https://jsfiddle.net">JSFiddle</a>
+</div>
+
+<!-- 📊 Analytics -->
+<div class="section" data-category="analytics">
+<h2>📊 Analytics & Marketing</h2>
+<a href="https://analytics.google.com">Google Analytics</a>
+<a href="https://ahrefs.com">Ahrefs</a>
+<a href="https://neilpatel.com">Neil Patel</a>
+</div>
+
+<!-- 🧰 Tools by Function -->
+<div class="section" data-category="function">
+<h2>🧰 Tools by Function</h2>
+<a href="https://grammarly.com">Grammarly</a>
+<a href="https://zapier.com">Zapier</a>
+<a href="https://obsidian.md">Obsidian</a>
+</div>
+
+<!-- 💰 Finance -->
+<div class="section" data-category="finance">
+<h2>💰 Finance & Money</h2>
+<a href="https://mint.intuit.com">Mint</a>
+<a href="https://yahoo.com/finance">Yahoo Finance</a>
+<a href="https://investopedia.com">Investopedia</a>
+</div>
+
+<!-- 📌 Planning -->
+<div class="section" data-category="planning">
+<h2>📌 To-Do & Planning</h2>
+<a href="https://todoist.com">Todoist</a>
+<a href="https://calendar.google.com">Google Calendar</a>
+</div>
+
+<!-- 💡 Ideas -->
+<div class="section" data-category="ideas">
+<h2>💡 Inspiration & Ideas</h2>
+<a href="https://readwise.io">Readwise</a>
+<a href="https://pinterest.com">Pinterest</a>
+</div>
+
+<!-- 🧠 Thinking -->
+<div class="section" data-category="thinking">
+<h2>🧠 Mental Models & Thinking</h2>
+<a href="https://fs.blog">Farnam Street</a>
+<a href="https://nesslabs.com">Ness Labs</a>
+</div>
+
+<!-- 🗂️ Archive -->
+<div class="section" data-category="archive">
+<h2>🗂️ Archives & Saved</h2>
+<a href="#">Old / Rare Links</a>
+</div>
+
+<footer>
+<p>Built for lifelong learning • Hosted on GitHub Pages</p>
+</footer>
+
+<script>
+const search = document.getElementById("search");
+const filter = document.getElementById("filter");
+const sections = document.querySelectorAll(".section");
+
+search.addEventListener("input", applyFilters);
+filter.addEventListener("change", applyFilters);
+
+function applyFilters() {
+  const text = search.value.toLowerCase();
+  const cat = filter.value;
+
+  sections.forEach(sec => {
+    let matchesText = [...sec.querySelectorAll("a")]
+      .some(a => a.textContent.toLowerCase().includes(text));
+
+    let matchesCat = cat === "all" || sec.dataset.category === cat;
+    sec.classList.toggle("hidden", !(matchesText && matchesCat));
+  });
+}
+
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
